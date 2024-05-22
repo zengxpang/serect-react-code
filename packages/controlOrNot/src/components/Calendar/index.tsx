@@ -37,11 +37,14 @@ const Calendar = (props: ICalendarProps) => {
 
   // const mergedValue = !isControlled ? value : propsValue
 
-  const [mergedValue, setStateValue] = useMergeState(new Date('2024-5-1'), {
-    value: propsValue,
-    defaultValue,
-    onChange,
-  })
+  const [mergedValue, setStateValue] = useMergeState<Date>(
+    new Date('2024-5-1'),
+    {
+      value: propsValue,
+      defaultValue,
+      onChange,
+    },
+  )
 
   return (
     <>

@@ -36,6 +36,7 @@ export function useMergeState<T>(
     isFirstRenderRef.current = false
   }, [propsValue])
 
+  // 若返回值为 true，则 value 类型为 Function。
   // eslint-disable-next-line @typescript-eslint/ban-types
   const isFunction = (value: unknown): value is Function =>
     typeof value === 'function'

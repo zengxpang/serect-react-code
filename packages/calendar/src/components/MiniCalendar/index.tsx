@@ -30,10 +30,14 @@ const MiniCalendar: ForwardRefRenderFunction<
     defaultValue: new Date(), // 默认值，会被 props.defaultValue 和 props.value 覆盖
   })
 
-  useImperativeHandle(ref, () => ({
-    getDate: () => date,
-    setDate: (date: Date) => setDate(date),
-  }))
+  useImperativeHandle(
+    ref,
+    () => ({
+      getDate: () => date,
+      setDate: (date: Date) => setDate(date),
+    }),
+    [],
+  )
 
   const handlePrev = () => {
     setDate(new Date(date.getFullYear(), date.getMonth() - 1, 1))
